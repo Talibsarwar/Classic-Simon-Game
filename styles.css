@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: #011F3F;
+  margin: 0;
+  padding: 4vh 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  /* shrinks smoothly from 3rem on desktop down to about 1.1rem on small phones */
+  font-size: clamp(1.1rem, 5vw, 3rem);
+  line-height: 1.5;
+  margin: 0 auto 3vh;
+  max-width: 900px;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  /* button size follows the screen: 200px max, smaller on phones and short landscape screens */
+  --size: min(200px, 36vw, 30vh);
+  margin: clamp(8px, 3vw, 25px);
+  display: inline-block;
+  height: var(--size);
+  width: var(--size);
+  flex: 0 0 auto;
+  border: clamp(5px, 1.5vw, 10px) solid black;
+  border-radius: 20%;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+/* short screens, e.g. a phone held sideways */
+@media (max-height: 500px) {
+  body {
+    padding-top: 10px;
+  }
+
+  #level-title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .btn {
+    --size: min(200px, 36vw, 32vh);
+    margin: 6px 12px;
+  }
+}
